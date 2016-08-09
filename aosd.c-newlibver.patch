@@ -1,0 +1,31 @@
+--- aosd.c	2008-09-23 13:54:23.000000000 +0200
++++ aosd.c-newlibver	2008-09-23 13:52:20.000000000 +0200
+@@ -322,13 +322,23 @@
+ {
+   int morehelp, level = 0;
+ 
+-  osd_top = xosd_init ("fixed", "LawnGreen", 3, XOSD_top, 0, 1);
+-  osd_bottom = xosd_init ("fixed", "LawnGreen", 3, XOSD_bottom, 0, 1);
+-	
++  osd_top = xosd_create(2);
++  xosd_set_font(osd_top, "fixed");
++  xosd_set_colour(osd_top, "LawnGreen");
++  xosd_set_timeout(osd_top, 3);
++  xosd_set_pos(osd_top, XOSD_top);
++  xosd_set_shadow_offset(osd_top, 1);
++  osd_bottom = xosd_create(1);
++  xosd_set_font(osd_bottom, "fixed");
++  xosd_set_colour(osd_bottom, "LawnGreen");
++  xosd_set_timeout(osd_bottom, 3);
++  xosd_set_pos(osd_bottom, XOSD_bottom);
++  xosd_set_shadow_offset(osd_bottom, 1);
++
+   sevents();
+ 
+-  xosd_uninit (osd_top);
+-  xosd_uninit (osd_bottom);
++  xosd_destroy(osd_top);
++  xosd_destroy(osd_bottom);
+ 
+   return 0;
+ }
