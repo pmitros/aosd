@@ -24,8 +24,9 @@ aosd, so future updates were be on his [aosd web
 page](http://aosd.sourceforge.net/) on SourceForge. I rather prefer
 when things on the Internet don't disappear, so I kept the page up for
 historical reasons. In 2016, Sourceforge was on the way out, and a
-tarball on my personal page seemed quaint, so I moved this over to
-github.
+tarball on my personal page seemed quaint, so I placed a copy on
+github. The SourceForge page is canonical, though, so long as it is
+still up. Marek is the maintainer. 
 
 Compile with: `gcc aosd.c -lxosd -lasound -oaosd`
 
